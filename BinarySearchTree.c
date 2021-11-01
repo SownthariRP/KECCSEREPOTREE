@@ -68,7 +68,7 @@ struct node*delete_n(struct node*T,int x)
            
   }
 }   
-// display using inorder
+// display using inorder traversal
 void inorder(struct node*t1)
 {
     if(t1==NULL)
