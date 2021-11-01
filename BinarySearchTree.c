@@ -63,9 +63,7 @@ struct node*delete_n(struct node*T,int x)
          Q=Q->left;
        
         T->right=delete_n(T->right,Q->data);
-      }
-      
-           
+      }      
   }
 }   
 // display using inorder traversal
