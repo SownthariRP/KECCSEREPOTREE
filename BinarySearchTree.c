@@ -43,10 +43,10 @@ struct node*delete_n(struct node*T,int x)
     
     if(T==NULL) 
      return NULL;
-  if(x<T->data)
-   T->left=delete_n(T->left,x);
-  else if(x>T->data)
-   T->right=delete_n(T->right,x);//traverse nodes
+    if(x<T->data)
+      T->left=delete_n(T->left,x);
+    else if(x>T->data)
+     T->right=delete_n(T->right,x);//traverse nodes
   else 
   {
       if ((T->left==NULL) && (T->right==NULL))
@@ -77,9 +77,35 @@ void inorder(struct node*t1)
         inorder(t1->right);
     }
 }
+int search(struct node*T,int x)
+{
+    if (T==NULL)
+    return 0;
+    else if(T->data==x)
+    {
+        printf("\nfound");
+        return 0;
+    } 
+     else if 
+        (x<T->data)
+        return(search(T->left,x));
+    else if 
+        (x>T->data)
+        return(search(T->right,x));
+}
+//find min value
+int findmin(struct node*T)
+{
+    if(T==NULL)
+      return 0;
+    while(T->left!=NULL)
+      T=T->left;
+      return(T->data);
+}
 void main()
-{    int y;
-     struct node*root=NULL;
+{       
+    int b,x,y;
+    struct node*root=NULL;
     root=insert(52,root);
     root=insert(38,root);
     root=insert(12,root);
@@ -89,9 +115,12 @@ void main()
     root=insert(34,root);
     root=insert(35,root);
     inorder(root);
-     y=findmax(root);
+    y=findmax(root);
     printf("\n %d",y);
     delete_n(root,38);
     inorder(root);
+    x= findmin(root);
+    printf("\n %d",x);
+    b=search(root,22);
 }
 //main function
