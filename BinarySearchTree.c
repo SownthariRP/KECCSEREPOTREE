@@ -56,8 +56,8 @@ int findmin(struct node*T)
 }
 void main()
 {       
-	int b,x;
-	struct node*root=NULL;
+    int b,x;
+    struct node*root=NULL;
     root=insert(52,root);
     root=insert(38,root);
     root=insert(12,root);
@@ -66,7 +66,7 @@ void main()
     root=insert(55,root);
     root=insert(34,root);
     root=insert(35,root);
-	x= findmin(root);
+    x= findmin(root);
     printf("\n %d",x);
-	 b=search(root,22);
+    b=search(root,22);
 }
