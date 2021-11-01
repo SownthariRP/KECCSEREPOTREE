@@ -27,8 +27,36 @@ struct node *insert(int x, struct node*t)
       t->right=insert(x,t->right);
       return t;
 } 
-void main()
+//search
+int search(struct node*T,int x)
 {
+    if (T==NULL)
+    return 0;
+    else if(T->data==x)
+    {
+        printf("\nfound");
+        return 0;
+    } 
+     else if 
+        (x<T->data)
+        return(search(T->left,x));
+    else if 
+        (x>T->data)
+        return(search(T->right,x));
+    
+}
+//find min value
+int findmin(struct node*T)
+{
+    if(T==NULL)
+      return 0;
+    while(T->left!=NULL)
+      T=T->left;
+      return(T->data);
+}
+void main()
+{       
+	int b,x;
 	struct node*root=NULL;
     root=insert(52,root);
     root=insert(38,root);
@@ -38,4 +66,7 @@ void main()
     root=insert(55,root);
     root=insert(34,root);
     root=insert(35,root);
+	x= findmin(root);
+    printf("\n %d",x);
+	 b=search(root,22);
 }
