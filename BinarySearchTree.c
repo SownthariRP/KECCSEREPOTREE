@@ -123,4 +123,4 @@ void main()
     printf("\n %d",x);
     b=search(root,22);
 }
-//main function
+//main function.
