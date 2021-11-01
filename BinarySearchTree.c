@@ -79,7 +79,7 @@ void inorder(struct node*t1)
 }
 void main()
 {    int y;
-	struct node*root=NULL;
+     struct node*root=NULL;
     root=insert(52,root);
     root=insert(38,root);
     root=insert(12,root);
