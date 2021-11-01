@@ -74,8 +74,7 @@ void inorder(struct node*t1)
     if(t1==NULL)
     return;
     else
-    {
-        inorder(t1->left);
+    {      inorder(t1->left);
         printf(" %d ",t1->data);
         inorder(t1->right);
     }
